@@ -1,10 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-* {
+/* ─── Reset ───────────────────────────────────────────────── */
+*, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -12,27 +11,61 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  font-size: 16px;
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  background-color: #ffffff;
+  color: #0f172a;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: #0a0e27;
-}
-
+/* ─── Scrollbar — thin, corporate ───────────────────────── */
+::-webkit-scrollbar       { width: 5px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
 ::-webkit-scrollbar-thumb {
-  background: #4f7cfe;
-  border-radius: 4px;
+  background: #94a3b8;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover { background: #64748b; }
+
+/* ─── Focus — blue outline, no default ──────────────────── */
+:focus-visible {
+  outline: 2px solid #1d4ed8;
+  outline-offset: 2px;
+  border-radius: 3px;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #22d3ee;
+/* ─── Selection ──────────────────────────────────────────── */
+::selection {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+/* ─── Corporate utilities ────────────────────────────────── */
+@layer components {
+  /* Section eyebrow label */
+  .corp-label {
+    @apply text-[11px] font-semibold text-blue-700 uppercase tracking-[0.1em];
+  }
+  /* Grid-line divider between cards */
+  .grid-panel {
+    @apply grid gap-px bg-slate-200;
+  }
+  /* Panel cell (sits inside grid-panel) */
+  .grid-cell {
+    @apply bg-white;
+  }
+}
+
+/* ─── Smooth link transitions ────────────────────────────── */
+a { transition: color 0.15s ease, opacity 0.15s ease; }
+
+/* ─── Hero stagger animation ─────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
