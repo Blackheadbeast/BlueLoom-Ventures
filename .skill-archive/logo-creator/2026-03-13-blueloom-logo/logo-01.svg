@@ -1,0 +1,26 @@
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="400" height="400" fill="white"/>
+
+  <!-- Loom Icon -->
+  <g id="LoomMark">
+    <!-- Vertical Bars (Deep Navy) -->
+    <rect x="140" y="100" width="25" height="200" rx="4" fill="#0A192F" />
+    <rect x="187.5" y="100" width="25" height="200" rx="4" fill="#0A192F" />
+    <rect x="235" y="100" width="25" height="200" rx="4" fill="#0A192F" />
+
+    <!-- Horizontal Bars (Electric Teal) -->
+    <!-- These are cut to show the "over-under" weaving effect -->
+    <rect x="100" y="140" width="200" height="25" rx="4" fill="#00FACD" fill-opacity="0.9" />
+    <rect x="100" y="187.5" width="200" height="25" rx="4" fill="#00FACD" fill-opacity="0.9" />
+    <rect x="100" y="235" width="200" height="25" rx="4" fill="#00FACD" fill-opacity="0.9" />
+
+    <!-- Weaving Intersections (Darker highlights for depth) -->
+    <rect x="140" y="140" width="25" height="25" rx="2" fill="#0A192F"/>
+    <rect x="187.5" y="187.5" width="25" height="25" rx="2" fill="#0A192F"/>
+    <rect x="235" y="235" width="25" height="25" rx="2" fill="#0A192F"/>
+  </g>
+
+  <!-- Branding Text -->
+  <text x="200" y="350" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="28" fill="#0A192F">BlueLoom <tspan fill="#00FACD" font-weight="300">Ventures</tspan></text>
+</svg>

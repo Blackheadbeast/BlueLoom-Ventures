@@ -1,0 +1,21 @@
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Standalone mark — no wordmark. For favicon and app icon use. -->
+  <rect width="400" height="400" fill="white"/>
+
+  <!-- Vertical threads (navy) -->
+  <rect x="147" y="85" width="22" height="230" rx="5" fill="#030D1F"/>
+  <rect x="191" y="85" width="22" height="230" rx="5" fill="#030D1F"/>
+  <rect x="235" y="85" width="22" height="230" rx="5" fill="#030D1F"/>
+
+  <!-- Horizontal threads (blue) -->
+  <rect x="85" y="147" width="230" height="22" rx="5" fill="#0066FF"/>
+  <rect x="85" y="191" width="230" height="22" rx="5" fill="#0066FF"/>
+  <rect x="85" y="235" width="230" height="22" rx="5" fill="#0066FF"/>
+
+  <!-- Weave intersections: plain weave checkerboard -->
+  <rect x="147" y="147" width="22" height="22" fill="#030D1F"/>
+  <rect x="235" y="147" width="22" height="22" fill="#030D1F"/>
+  <rect x="191" y="191" width="22" height="22" fill="#030D1F"/>
+  <rect x="147" y="235" width="22" height="22" fill="#030D1F"/>
+  <rect x="235" y="235" width="22" height="22" fill="#030D1F"/>
+</svg>
