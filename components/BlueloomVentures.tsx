@@ -7,270 +7,104 @@ import {
   ChevronRight,
   Menu,
   X,
-  Code2,
-  Lightbulb,
-  Bot,
+  Settings,
   ShieldCheck,
+  Zap,
   Cloud,
-  Link2,
+  Bot,
+  CheckCircle2,
 } from 'lucide-react';
 
 // ─────────────────────────────────────────────────────────────
-// BRAND DATA
+// DATA
 // ─────────────────────────────────────────────────────────────
 
 const NAV_LINKS: [string, string][] = [
-  ['Services',  '#services'],
-  ['Our Work',  '#work'],
-  ['Approach',  '#approach'],
-  ['Contact',   '#contact'],
+  ['Services', '#services'],
+  ['Projects', '#projects'],
+  ['Contact',  '#contact'],
+];
+
+const PROBLEMS = [
+  {
+    quote: '"Our files are everywhere."',
+    detail: 'Shared drives, email attachments, personal desktops. Nobody can find anything and nobody knows what\'s current.',
+  },
+  {
+    quote: '"We\'re not sure if our data is backed up."',
+    detail: 'Maybe it is, maybe it isn\'t. That uncertainty is a real risk — and it\'s easy to fix.',
+  },
+  {
+    quote: '"We\'re paying for Microsoft 365 but barely using it."',
+    detail: 'SharePoint, Teams, Entra ID — tools you\'re paying for every month, doing almost nothing for you.',
+  },
+  {
+    quote: '"Our team copies data between apps manually every day."',
+    detail: 'It works, technically. But it\'s slow, error-prone, and a waste of everyone\'s time.',
+  },
 ];
 
 const SERVICES = [
   {
-    number: '01',
-    Icon: Code2,
-    title: 'Custom Software Development',
-    summary:
-      'Full-stack web applications, SaaS platforms, and API systems engineered for performance, scalability, and long-term maintainability.',
-    capabilities: [
-      'Web application development — Next.js, React, Node.js',
-      'SaaS platform architecture and full-stack delivery',
-      'RESTful and GraphQL API design and documentation',
-      'Legacy system modernisation and codebase migration',
-    ],
+    Icon: Settings,
+    title: 'IT System Cleanup',
+    description:
+      'We organize your cloud storage, clean up your tools, and eliminate the messy setups that slow your team down. Most clients see a meaningful difference within the first week.',
   },
   {
-    number: '02',
-    Icon: Lightbulb,
-    title: 'IT Consulting & Advisory',
-    summary:
-      'Strategic technology guidance that helps organisations make informed decisions, reduce technical risk, and build durable competitive advantage.',
-    capabilities: [
-      'Technology stack assessment and architecture review',
-      'Digital transformation strategy and roadmapping',
-      'Technical due diligence for investment and M&A',
-      'Engineering team structure and process advisory',
-    ],
-  },
-  {
-    number: '03',
-    Icon: Bot,
-    title: 'AI & Process Automation',
-    summary:
-      'Intelligent automation solutions that eliminate operational overhead, accelerate decision cycles, and reduce cost at scale.',
-    capabilities: [
-      'LLM integration and AI-powered workflow automation',
-      'Intelligent document processing and extraction',
-      'Business process automation — API and RPA-based',
-      'Automated reporting pipelines and data workflows',
-    ],
-  },
-  {
-    number: '04',
     Icon: ShieldCheck,
-    title: 'QA & Software Testing',
-    summary:
-      'Comprehensive quality assurance programmes that ensure software reliability, regulatory compliance, and confidence across all release cycles.',
-    capabilities: [
-      'End-to-end test automation — Playwright, Cypress',
-      'Performance, load, and stress testing',
-      'Regulatory and compliance validation frameworks',
-      'CI/CD pipeline integration and test governance',
-    ],
+    title: 'Security & Backup Setup',
+    description:
+      'MFA, a proper password manager, automated backups, and permissions that actually make sense. You\'ll know your data is protected — without needing to think about it.',
   },
   {
-    number: '05',
+    Icon: Zap,
+    title: 'Business Process Automation',
+    description:
+      'We find the repetitive tasks eating your team\'s time and automate them using Zapier, Make, or Power Automate. Less manual work, fewer mistakes, more time for real work.',
+  },
+  {
     Icon: Cloud,
-    title: 'Cloud Architecture & Infrastructure',
-    summary:
-      'Scalable, secure, and cost-optimised cloud infrastructure designed to support enterprise workloads from day one through sustained growth.',
-    capabilities: [
-      'Cloud architecture design — AWS, Vercel, Supabase',
-      'Infrastructure as code and DevOps automation',
-      'Database architecture, optimisation, and migration',
-      'Security design, access controls, and compliance',
-    ],
-  },
-  {
-    number: '06',
-    Icon: Link2,
-    title: 'System Integration',
-    summary:
-      "Seamless integration of disparate systems, third-party platforms, and data sources across an organisation's technology estate.",
-    capabilities: [
-      'Enterprise API integration and service orchestration',
-      'Third-party platform connectivity — CRM, ERP, payments',
-      'Event-driven architecture and message queue design',
-      'Real-time data synchronisation and monitoring',
-    ],
-  },
-];
-
-const PRINCIPLES = [
-  {
-    number: '01',
-    title: 'Senior delivery. Every time.',
-    body:
-      'Every engagement is staffed exclusively with senior engineers and consultants. We do not allocate junior resource against senior billing rates.',
-  },
-  {
-    number: '02',
-    title: 'Defined scope. Predictable cost.',
-    body:
-      'We scope engagements with precision before any work begins. Fixed milestones, transparent progress reporting, and no unplanned scope expansions.',
-  },
-  {
-    number: '03',
-    title: 'Engineering over process.',
-    body:
-      'We build working software, not slide decks. Our practitioners are engineers first — we measure success by outcomes delivered, not hours logged.',
-  },
-  {
-    number: '04',
-    title: 'Built to be owned.',
-    body:
-      'Everything we deliver is fully documented, cleanly architected, and designed for your team to operate independently after handover.',
-  },
-];
-
-const CREDENTIALS = [
-  { value: '5',   unit: '+', label: 'Years of delivery experience' },
-  { value: '50',  unit: '+', label: 'Enterprise and commercial projects' },
-  { value: '100', unit: '%', label: 'Senior-grade practitioners on every engagement' },
-  { value: '24',  unit: 'h', label: 'Maximum guaranteed response time' },
-];
-
-const CASE_STUDIES = [
-  {
-    sector: 'Financial Services',
-    title: 'Automated Data Pipeline & Analytics Platform',
-    metric: '72h → 4h',
-    metricLabel: 'Reporting cycle reduction',
-    challenge:
-      'A regional financial institution required consolidation of data from 12 legacy systems into a single, auditable reporting layer accessible to compliance and operations teams.',
-    outcome:
-      'Full reconciliation across all source systems automated with zero manual intervention. Deployed to production on schedule and under budget.',
-    tags: ['Data Engineering', 'Cloud Architecture', 'API Integration'],
-  },
-  {
-    sector: 'Retail & E-Commerce',
-    title: 'Order Management & Fulfilment Automation',
-    metric: '92%',
-    metricLabel: 'Reduction in manual processing overhead',
-    challenge:
-      'A high-volume e-commerce operator faced order processing bottlenecks constraining commercial growth at 15,000 daily transactions across multiple fulfilment channels.',
-    outcome:
-      'Platform now supports 40,000+ daily transactions across all channels with no unplanned downtime since deployment.',
-    tags: ['Process Automation', 'System Integration', 'QA Testing'],
-  },
-  {
-    sector: 'Healthcare Technology',
-    title: 'Regulatory Compliance Testing Framework',
-    metric: '3,400+',
-    metricLabel: 'Automated test cases deployed',
-    challenge:
-      'A MedTech software provider required a fully validated QA framework to satisfy FDA 21 CFR Part 11 software qualification requirements ahead of a regulatory submission.',
-    outcome:
-      'Full compliance achieved within 14 weeks. Continuous regression coverage on every release cycle, with zero critical defects reaching production.',
-    tags: ['QA Automation', 'Compliance Testing', 'Test Architecture'],
-  },
-];
-
-const INDUSTRIES = [
-  {
-    name: 'Financial Services',
+    title: 'Microsoft 365 & Google Workspace',
     description:
-      'Regulatory compliance systems, automated reporting pipelines, and high-availability financial infrastructure.',
+      'Most businesses use about 10% of what they\'re paying for. We configure SharePoint, Teams, and Google Workspace properly so your team can actually collaborate.',
   },
   {
-    name: 'Healthcare & Life Sciences',
+    Icon: Bot,
+    title: 'AI & Workflow Automation',
     description:
-      'FDA-validated QA frameworks, EHR integrations, and clinical data processing systems.',
-  },
-  {
-    name: 'Retail & E-Commerce',
-    description:
-      'High-throughput order management, fulfilment automation, and customer-facing platform engineering.',
-  },
-  {
-    name: 'SaaS & Technology',
-    description:
-      'Product architecture, API platform design, and scalable multi-tenant infrastructure.',
-  },
-  {
-    name: 'Professional Services',
-    description:
-      'Workflow automation, document intelligence, and practice management system integration.',
-  },
-  {
-    name: 'Manufacturing & Logistics',
-    description:
-      'Supply chain visibility systems, IoT data pipelines, and operational analytics platforms.',
+      'We find the specific tasks where AI tools will genuinely save your team time — then set them up properly. No subscriptions to things you won\'t use. Just practical automation that fits the way you already work.',
   },
 ];
 
-const APPROACH = [
+const PROJECTS = [
   {
-    step: '01',
-    title: 'Discovery & Scoping',
-    body:
-      'We conduct structured discovery to define requirements, assess technical constraints, and establish clear success criteria. No work begins without a mutually agreed scope.',
+    sector: 'Accounting Firm',
+    accentBg: 'bg-teal-50',
+    accentBorder: 'border-teal-200',
+    accentBar: 'bg-teal-500',
+    problem: 'Files spread across personal desktops and Google Drive. No backup system. Staff sharing passwords over email.',
+    solution: 'Organized cloud storage, set up automated daily backups, and rolled out a password manager and MFA across the team.',
+    result: 'Data protected. Team saves hours every week.',
   },
   {
-    step: '02',
-    title: 'Architecture & Planning',
-    body:
-      'We design the solution architecture and select appropriate technology components before delivery begins. A detailed plan with defined milestones and review gates is issued to all stakeholders.',
+    sector: 'Real Estate Office',
+    accentBg: 'bg-orange-50',
+    accentBorder: 'border-orange-200',
+    accentBar: 'bg-orange-500',
+    problem: 'Agents manually copied listing data across three separate systems — every single day.',
+    solution: 'Built an automation that syncs listing data, generates document templates, and notifies the team automatically.',
+    result: 'Eliminated 20 minutes of manual work per listing.',
   },
   {
-    step: '03',
-    title: 'Iterative Delivery',
-    body:
-      'We deliver in structured two-week iterations with stakeholder demonstrations at each stage. All in-progress work is tracked against the agreed scope with full transparency.',
+    sector: 'Small SaaS Startup',
+    accentBg: 'bg-blue-50',
+    accentBorder: 'border-blue-200',
+    accentBar: 'bg-blue-500',
+    problem: 'Microsoft 365 was barely configured — no MFA, messy permissions, no shared file structure.',
+    solution: 'Enabled MFA across the team, set up proper access controls, and organized SharePoint for easy collaboration.',
+    result: 'Stronger security and a setup the whole team can actually use.',
   },
-  {
-    step: '04',
-    title: 'Handover & Post-Delivery Support',
-    body:
-      'We provide thorough documentation, structured knowledge transfer, and defined post-delivery support to ensure long-term operational success after client handover.',
-  },
-];
-
-const TESTIMONIALS = [
-  {
-    quote:
-      'BlueLoom brought the engineering discipline and delivery rigour our in-house team lacked. They scoped the engagement clearly, delivered on schedule, and produced documentation that our engineers could build upon immediately.',
-    author: 'M. Thompson',
-    title: 'Chief Technology Officer, Series B SaaS Company',
-    initials: 'MT',
-  },
-  {
-    quote:
-      'The architectural clarity their consultants provided was unlike anything we had encountered previously. Technology recommendations were grounded in practical delivery constraints — not theoretical frameworks divorced from commercial reality.',
-    author: 'S. Patel',
-    title: 'Head of Technology, Financial Services Group',
-    initials: 'SP',
-  },
-];
-
-const SERVICE_OPTIONS = [
-  'Custom Software Development',
-  'IT Consulting & Advisory',
-  'AI & Process Automation',
-  'QA & Software Testing',
-  'Cloud Architecture & Infrastructure',
-  'System Integration',
-  'Multiple Services / Unsure',
-];
-
-const FOOTER_SERVICES = [
-  'Software Development',
-  'IT Consulting',
-  'AI & Automation',
-  'QA & Testing',
-  'Cloud Infrastructure',
-  'System Integration',
 ];
 
 // ─────────────────────────────────────────────────────────────
@@ -288,90 +122,71 @@ export default function BlueloomVentures() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 font-sans">
+    <div className="min-h-screen bg-white text-slate-900 font-sans antialiased">
 
       {/* ══════════════════════════════════════════
           NAVIGATION
       ══════════════════════════════════════════ */}
       <header
-        className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
-          scrolled
-            ? 'bg-white border-b border-slate-200 shadow-sm'
-            : 'bg-[#030D1F]/90 backdrop-blur-md'
+        className={`fixed top-0 inset-x-0 z-50 bg-white transition-all duration-200 ${
+          scrolled ? 'border-b border-slate-200 shadow-sm' : 'border-b border-transparent'
         }`}
       >
         <div className="max-w-content mx-auto px-8 py-4 flex items-center justify-between">
 
-          {/* Logo + wordmark */}
           <a href="#" className="flex items-center gap-3 flex-shrink-0">
             <Image
               src="/blueloom-logo.png"
               alt="BlueLoom Ventures"
-              width={34}
-              height={34}
-              className="object-contain flex-shrink-0"
+              width={32}
+              height={32}
+              className="object-contain"
               priority
             />
             <div className="leading-tight">
-              <div className={`font-bold text-sm tracking-tight transition-colors duration-200 ${scrolled ? 'text-slate-900' : 'text-white'}`}>
-                BlueLoom Ventures
-              </div>
-              <div className={`text-[9.5px] font-semibold tracking-[0.12em] uppercase transition-colors duration-200 ${scrolled ? 'text-slate-400' : 'text-white/30'}`}>
-                Technology Consulting
-              </div>
+              <div className="font-bold text-[13px] text-slate-900 tracking-tight">BlueLoom Ventures</div>
+              <div className="text-[9.5px] font-semibold text-slate-400 uppercase tracking-[0.12em]">IT Consulting</div>
             </div>
           </a>
 
-          {/* Desktop nav */}
           <nav className="hidden lg:flex items-center gap-8">
             {NAV_LINKS.map(([label, href]) => (
               <a
                 key={label}
                 href={href}
-                className={`text-[13px] font-medium transition-colors duration-200 ${
-                  scrolled
-                    ? 'text-slate-600 hover:text-slate-900'
-                    : 'text-white/60 hover:text-white'
-                }`}
+                className="text-[13px] font-medium text-slate-600 hover:text-slate-900 transition-colors"
               >
                 {label}
               </a>
             ))}
           </nav>
 
-          {/* Right actions */}
           <div className="hidden lg:flex items-center gap-4">
             <a
               href="mailto:blueloomventuresllc@gmail.com"
-              className={`text-[13px] font-medium transition-colors duration-200 ${
-                scrolled ? 'text-slate-500 hover:text-slate-800' : 'text-white/50 hover:text-white/80'
-              }`}
+              className="text-[13px] text-slate-500 hover:text-slate-800 transition-colors"
             >
               blueloomventuresllc@gmail.com
             </a>
             <a
               href="#contact"
-              className="px-4 py-2.5 bg-[#0066FF] text-white text-[13px] font-semibold rounded hover:bg-[#0047CC] transition-colors duration-200"
+              className="px-4 py-2.5 bg-teal-600 text-white text-[13px] font-semibold rounded-xl hover:bg-teal-700 transition-colors"
             >
-              Book a Consultation
+              Book a Free Call
             </a>
           </div>
 
-          {/* Mobile toggle */}
           <button
             aria-label="Toggle navigation"
             onClick={() => setMobileOpen(!mobileOpen)}
-            className={`lg:hidden p-2 rounded transition-colors ${
-              scrolled ? 'text-slate-700 hover:bg-slate-100' : 'text-white'
-            }`}
+            className="lg:hidden p-2 text-slate-700 hover:bg-slate-100 rounded-lg transition-colors"
           >
             {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
 
-        {/* Mobile drawer */}
         {mobileOpen && (
-          <div className="lg:hidden bg-white border-t border-slate-200 shadow-lg px-8 py-5">
+          <div className="lg:hidden bg-white border-t border-slate-100 px-8 py-4 shadow-lg">
             {NAV_LINKS.map(([label, href]) => (
               <a
                 key={label}
@@ -386,9 +201,9 @@ export default function BlueloomVentures() {
             <a
               href="#contact"
               onClick={() => setMobileOpen(false)}
-              className="mt-4 flex items-center justify-center w-full py-3 bg-[#0066FF] text-white text-[13px] font-semibold rounded"
+              className="mt-4 flex items-center justify-center w-full py-3 bg-teal-600 text-white text-[13px] font-semibold rounded-xl"
             >
-              Book a Consultation
+              Book a Free Call
             </a>
           </div>
         )}
@@ -398,136 +213,164 @@ export default function BlueloomVentures() {
       {/* ══════════════════════════════════════════
           HERO
       ══════════════════════════════════════════ */}
-      <section className="relative min-h-screen bg-[#030D1F] flex items-center overflow-hidden">
+      <section className="pt-28 pb-24 px-8 bg-white">
+        <div className="max-w-content mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-        {/* Background depth layers */}
-        <div className="absolute inset-0 pointer-events-none select-none">
-          {/* Dot grid */}
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px)',
-              backgroundSize: '32px 32px',
-            }}
-          />
-          {/* Glow — top-left */}
-          <div className="absolute -top-48 -left-48 w-[800px] h-[800px] rounded-full bg-[#0066FF]/[0.06] blur-[160px]" />
-          {/* Glow — bottom-right */}
-          <div className="absolute bottom-0 right-0 translate-x-1/4 translate-y-1/4 w-[600px] h-[600px] rounded-full bg-blue-900/15 blur-[120px]" />
-          {/* Column rule */}
-          <div className="absolute top-0 bottom-0 left-[58%] w-px bg-white/[0.04] hidden lg:block" />
-          {/* Horizontal scan lines */}
-          <div
-            className="absolute inset-0 opacity-[0.012]"
-            style={{
-              backgroundImage: 'linear-gradient(rgba(255,255,255,1) 1px, transparent 1px)',
-              backgroundSize: '100% 96px',
-            }}
-          />
-        </div>
-
-        <div className="relative z-10 max-w-content mx-auto px-8 w-full py-36 grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-16 items-center">
-
-          {/* Left — headline + CTAs */}
           <div>
-            {/* Badge */}
             <div
-              className="inline-flex items-center gap-2 px-3 py-1.5 border border-white/[0.08] rounded text-[11px] font-semibold text-white/40 tracking-[0.1em] uppercase mb-10"
+              className="inline-flex items-center gap-2 bg-teal-50 text-teal-700 text-[11px] font-semibold px-3.5 py-1.5 rounded-full mb-7 uppercase tracking-wider"
               style={{ animation: 'fadeUp 0.6s cubic-bezier(0.16,1,0.3,1) 0.05s both' }}
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-[#0066FF]" />
-              IT Consulting &amp; Software Development
+              <span className="w-1.5 h-1.5 rounded-full bg-teal-500" />
+              IT Consulting for Small Business
             </div>
 
             <h1
-              className="text-[3.25rem] lg:text-[3.75rem] font-bold text-white leading-[1.07] tracking-tight mb-7"
+              className="text-[3.5rem] lg:text-[4rem] font-bold text-slate-900 leading-[1.08] tracking-tight mb-6"
               style={{ animation: 'fadeUp 0.7s cubic-bezier(0.16,1,0.3,1) 0.15s both' }}
             >
-              Technology solutions
+              Your tech should
               <br />
-              <span className="text-[#0066FF]">engineered to perform.</span>
+              work <span className="text-teal-600">for your</span>
+              <br />
+              <span className="text-teal-600">business.</span>
             </h1>
 
             <p
-              className="text-[17px] text-white/50 max-w-xl leading-relaxed mb-10"
+              className="text-[17px] text-slate-500 leading-relaxed mb-8 max-w-lg"
               style={{ animation: 'fadeUp 0.7s cubic-bezier(0.16,1,0.3,1) 0.28s both' }}
             >
-              BlueLoom Ventures delivers enterprise-grade software development,
-              strategic IT consulting, and intelligent automation for organisations
-              that require precision, reliability, and measurable results.
+              We help small businesses fix messy systems, improve security, and automate
+              the repetitive work that&apos;s eating their time — without long contracts or big invoices.
             </p>
 
             <div
-              className="flex flex-wrap gap-3"
+              className="flex flex-wrap gap-3 mb-5"
               style={{ animation: 'fadeUp 0.7s cubic-bezier(0.16,1,0.3,1) 0.4s both' }}
             >
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#0066FF] text-white font-semibold text-[13px] rounded hover:bg-[#0047CC] transition-colors duration-200"
+                className="inline-flex items-center gap-2 px-6 py-3.5 bg-teal-600 text-white font-semibold text-[14px] rounded-xl hover:bg-teal-700 transition-colors"
               >
-                Book a Consultation
+                Book a Free 15-Minute IT Assessment
                 <ArrowRight className="w-4 h-4" />
               </a>
               <a
                 href="#services"
-                className="inline-flex items-center gap-2 px-6 py-3.5 border border-white/15 text-white/65 font-semibold text-[13px] rounded hover:border-white/30 hover:text-white/85 transition-all duration-200"
+                className="inline-flex items-center gap-2 px-6 py-3.5 border border-slate-200 text-slate-700 font-semibold text-[13px] rounded-xl hover:bg-slate-50 transition-colors"
               >
-                View Service Areas
+                See How We Help
               </a>
             </div>
+
+            <p
+              className="text-[12px] text-slate-400"
+              style={{ animation: 'fadeUp 0.7s cubic-bezier(0.16,1,0.3,1) 0.5s both' }}
+            >
+              No contracts. No obligation. Just a straight conversation.
+            </p>
           </div>
 
-          {/* Right — service index panel */}
+          {/* Dashboard mockup */}
           <div
-            className="hidden lg:block border border-white/[0.08] rounded-xl overflow-hidden"
-            style={{ animation: 'fadeUp 0.7s cubic-bezier(0.16,1,0.3,1) 0.5s both' }}
+            className="relative h-[400px] hidden lg:block"
+            style={{ animation: 'fadeUp 0.7s cubic-bezier(0.16,1,0.3,1) 0.35s both' }}
           >
-            <div className="px-5 py-3.5 border-b border-white/[0.06] bg-white/[0.03]">
-              <p className="text-[10px] font-semibold text-white/30 uppercase tracking-[0.12em]">
-                Service Areas
-              </p>
-            </div>
-            {SERVICES.map(({ number, title }, i) => (
-              <a
-                key={number}
-                href="#services"
-                className={`flex items-center justify-between px-5 py-3.5 group hover:bg-white/[0.04] transition-colors duration-150 ${
-                  i < SERVICES.length - 1 ? 'border-b border-white/[0.05]' : ''
-                }`}
-              >
-                <div className="flex items-center gap-4">
-                  <span className="text-[10px] font-mono text-white/20 w-4 flex-shrink-0 tabular-nums">
-                    {number}
-                  </span>
-                  <span className="text-[13px] font-medium text-white/55 group-hover:text-white/85 transition-colors duration-150">
-                    {title}
-                  </span>
-                </div>
-                <ChevronRight className="w-3.5 h-3.5 text-white/15 group-hover:text-[#0066FF] transition-colors duration-150 flex-shrink-0" />
-              </a>
-            ))}
-          </div>
-        </div>
+            <div className="absolute right-8 top-1/2 -translate-y-1/2 w-64 h-64 rounded-full bg-teal-50 -z-10" />
+            <div className="absolute left-0 bottom-8 w-36 h-36 rounded-full bg-slate-100 -z-10" />
 
-        <div className="absolute bottom-0 inset-x-0 h-px bg-white/[0.05]" />
+            {/* Main card */}
+            <div className="absolute right-0 top-8 w-[290px] bg-white rounded-2xl shadow-[0_8px_40px_-8px_rgba(0,0,0,0.14)] border border-slate-100 p-5">
+              <div className="flex items-center justify-between mb-5">
+                <div>
+                  <p className="text-[11px] text-slate-400 mb-0.5">System Health</p>
+                  <p className="text-2xl font-bold text-slate-900">All Clear</p>
+                </div>
+                <div className="w-11 h-11 rounded-xl bg-teal-50 flex items-center justify-center">
+                  <ShieldCheck className="w-5 h-5 text-teal-600" />
+                </div>
+              </div>
+
+              <div className="flex items-end gap-1.5 h-14 mb-2.5">
+                {[42, 65, 50, 82, 60, 94, 74].map((h, i) => (
+                  <div
+                    key={i}
+                    className="flex-1 rounded-t-sm"
+                    style={{
+                      height: `${h}%`,
+                      backgroundColor: i === 5 ? '#0D9488' : i === 3 ? '#5EEAD4' : '#F1F5F9',
+                    }}
+                  />
+                ))}
+              </div>
+              <div className="flex justify-between text-[9px] text-slate-300 mb-4">
+                {['M', 'T', 'W', 'T', 'F', 'S', 'S'].map((d, i) => <span key={i}>{d}</span>)}
+              </div>
+
+              <div className="grid grid-cols-2 gap-2">
+                <div className="bg-teal-50 rounded-xl p-3">
+                  <p className="text-[10px] text-teal-600 font-semibold mb-1.5">Security</p>
+                  <p className="text-[11px] text-slate-600"><span className="text-teal-500 font-bold">✓</span> MFA active</p>
+                  <p className="text-[11px] text-slate-600"><span className="text-teal-500 font-bold">✓</span> Backup on</p>
+                </div>
+                <div className="bg-slate-50 rounded-xl p-3">
+                  <p className="text-[10px] text-slate-500 font-semibold mb-1.5">Automations</p>
+                  <p className="text-[11px] text-slate-600">12 workflows</p>
+                  <p className="text-[11px] text-slate-600">running daily</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Floating badges */}
+            <div className="absolute left-0 top-20 bg-white rounded-2xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.12)] border border-slate-100 p-3 flex items-center gap-3">
+              <div className="w-9 h-9 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0">
+                <span className="text-emerald-600 font-bold text-sm">↑</span>
+              </div>
+              <div>
+                <p className="text-[10px] text-slate-400">Time saved</p>
+                <p className="text-[13px] font-bold text-slate-900">8 hrs / week</p>
+              </div>
+            </div>
+            <div className="absolute left-12 bottom-12 bg-teal-600 text-white text-[12px] font-semibold px-4 py-2.5 rounded-xl shadow-lg flex items-center gap-2">
+              <CheckCircle2 className="w-4 h-4" />
+              Backup verified
+            </div>
+          </div>
+
+        </div>
       </section>
 
 
       {/* ══════════════════════════════════════════
-          INDUSTRY TRUST STRIP
+          COMMON PROBLEMS
       ══════════════════════════════════════════ */}
-      <section className="border-b border-slate-200 bg-slate-50">
-        <div className="max-w-content mx-auto px-8 py-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-          <p className="text-[11px] font-semibold text-slate-400 uppercase tracking-widest flex-shrink-0">
-            Delivering outcomes across
-          </p>
-          <div className="flex flex-wrap gap-x-8 gap-y-1">
-            {INDUSTRIES.map(({ name }) => (
-              <span key={name} className="text-[13px] font-semibold text-slate-500">
-                {name}
-              </span>
+      <section className="py-20 px-8 bg-slate-50 border-t border-slate-100">
+        <div className="max-w-content mx-auto">
+
+          <div className="max-w-xl mb-12">
+            <p className="corp-label mb-3">Sound Familiar?</p>
+            <h2 className="text-[2.25rem] font-bold text-slate-900 leading-tight">
+              These problems are more common than you think.
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+            {PROBLEMS.map(({ quote, detail }, i) => (
+              <div
+                key={i}
+                className="bg-white rounded-2xl p-6 border border-slate-200 hover:border-teal-200 hover:shadow-[0_4px_20px_-4px_rgba(13,148,136,0.1)] transition-all duration-200"
+              >
+                <p className="text-[15px] font-semibold text-slate-900 italic mb-2">{quote}</p>
+                <p className="text-[13px] text-slate-500 leading-relaxed">{detail}</p>
+              </div>
             ))}
           </div>
+
+          <p className="text-[15px] text-slate-500 max-w-xl">
+            None of these are unusual. We see them in almost every small business we talk to.
+            The good news: they&apos;re all fixable — usually faster than you expect.
+          </p>
+
         </div>
       </section>
 
@@ -535,252 +378,30 @@ export default function BlueloomVentures() {
       {/* ══════════════════════════════════════════
           SERVICES
       ══════════════════════════════════════════ */}
-      <section id="services" className="py-28 px-8 bg-white">
+      <section id="services" className="py-20 px-8 bg-white border-t border-slate-100">
         <div className="max-w-content mx-auto">
 
-          <div className="max-w-2xl mb-14">
-            <p className="corp-label mb-3">Service Areas</p>
-            <h2 className="text-[2.25rem] font-bold text-slate-900 mb-5 leading-tight">
-              What we deliver
+          <div className="max-w-xl mb-12">
+            <p className="corp-label mb-3">What We Do</p>
+            <h2 className="text-[2.25rem] font-bold text-slate-900 leading-tight mb-4">
+              Five ways we help small businesses get their tech sorted.
             </h2>
             <p className="text-[15px] text-slate-500 leading-relaxed">
-              Six focused practice areas covering the complete lifecycle of enterprise
-              software — from strategy and architecture through to delivery, quality
-              assurance, and ongoing operational support.
+              Every project is scoped upfront, priced flat, and handed back with your team trained.
+              No monthly retainers. No dependency on us after we&apos;re done.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {SERVICES.map(({ number, Icon, title, summary, capabilities }) => (
-              <div
-                key={number}
-                className="group relative bg-white border border-slate-200/80 rounded-xl p-8 overflow-hidden hover:border-[#0066FF]/25 hover:-translate-y-0.5 hover:shadow-[0_16px_48px_-12px_rgba(0,102,255,0.12)] transition-all duration-300"
-              >
-                {/* Left accent bar — reveals on hover */}
-                <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-[#0066FF] scale-y-0 group-hover:scale-y-100 origin-top transition-transform duration-300" />
-
-                {/* Icon + number */}
-                <div className="flex items-start justify-between mb-6">
-                  <div className="w-10 h-10 border border-slate-200 rounded-lg flex items-center justify-center group-hover:border-[#0066FF] group-hover:bg-[#0066FF] transition-all duration-300 flex-shrink-0">
-                    <Icon className="w-4 h-4 text-slate-400 group-hover:text-white transition-colors duration-300" />
-                  </div>
-                  <span className="text-[11px] font-mono text-slate-300 tabular-nums">{number}</span>
-                </div>
-
-                <h3 className="text-[16px] font-semibold text-slate-900 mb-3 leading-snug">{title}</h3>
-                <p className="text-[13px] text-slate-500 leading-relaxed mb-5">{summary}</p>
-
-                <ul className="space-y-2">
-                  {capabilities.map((cap, j) => (
-                    <li key={j} className="flex items-start gap-2.5 text-[12px] text-slate-500 leading-snug">
-                      <span className="w-1 h-1 rounded-full bg-[#0066FF] mt-1.5 flex-shrink-0" />
-                      {cap}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-
-        </div>
-      </section>
-
-
-      {/* ══════════════════════════════════════════
-          WHO WE ARE
-      ══════════════════════════════════════════ */}
-      <section className="py-28 px-8 bg-slate-50 border-t border-slate-200">
-        <div className="max-w-content mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
-
-          {/* Left — company description */}
-          <div>
-            <p className="corp-label mb-3">Who We Are</p>
-            <h2 className="text-[2.25rem] font-bold text-slate-900 mb-6 leading-tight">
-              A focused firm with
-              <br />a deliberate model
-            </h2>
-            <p className="text-[15px] text-slate-500 leading-relaxed mb-5">
-              BlueLoom Ventures is a specialist technology consulting and software engineering
-              firm that works with mid-market and enterprise organisations on their most complex
-              and consequential technology challenges.
-            </p>
-            <p className="text-[15px] text-slate-500 leading-relaxed mb-5">
-              We are not a generalist agency or a staffing provider. We are a precision delivery
-              firm — built to work on projects where quality, reliability, and accountability matter.
-            </p>
-            <p className="text-[15px] text-slate-500 leading-relaxed">
-              Every engagement is led by senior practitioners with direct experience in the domain
-              and technology stack relevant to the project. No generalists, no project coordinators,
-              no inflated teams.
-            </p>
-          </div>
-
-          {/* Right — four principles */}
-          <div className="space-y-1">
-            {PRINCIPLES.map(({ number, title, body }) => (
-              <div
-                key={number}
-                className="group relative pl-6 pr-5 py-6 rounded-lg border border-transparent hover:bg-white hover:border-slate-200/80 hover:shadow-[0_2px_16px_-4px_rgba(0,0,0,0.06)] transition-all duration-200 cursor-default"
-              >
-                <div className="absolute left-0 top-5 bottom-5 w-[3px] bg-[#0066FF] scale-y-0 group-hover:scale-y-100 origin-top transition-transform duration-300 rounded-sm" />
-                <div className="flex items-start gap-4">
-                  <span className="text-[11px] font-mono font-bold text-[#0066FF] mt-0.5 flex-shrink-0 tabular-nums">
-                    {number}
-                  </span>
-                  <div>
-                    <h4 className="text-[14px] font-semibold text-slate-900 mb-2">{title}</h4>
-                    <p className="text-[13px] text-slate-500 leading-relaxed">{body}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-        </div>
-      </section>
-
-
-      {/* ══════════════════════════════════════════
-          CREDENTIALS STRIP — dark
-      ══════════════════════════════════════════ */}
-      <section className="bg-[#030D1F]">
-        <div className="max-w-content mx-auto">
-
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/[0.05]">
-            {CREDENTIALS.map(({ value, unit, label }) => (
-              <div key={label} className="px-10 py-12 text-center bg-[#030D1F]">
-                <div className="flex items-baseline justify-center gap-0.5 mb-3">
-                  <span className="text-[3rem] font-bold text-white tabular-nums leading-none">
-                    {value}
-                  </span>
-                  <span className="text-[1.75rem] font-bold text-[#0066FF] tabular-nums leading-none">
-                    {unit}
-                  </span>
-                </div>
-                <div className="text-[12px] text-white/35 leading-snug max-w-[160px] mx-auto">
-                  {label}
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="px-8 py-14 border-t border-white/[0.05]">
-            <p className="text-[15px] text-white/40 leading-relaxed max-w-3xl mx-auto text-center">
-              We maintain a deliberately focused team of senior engineers and consultants.
-              This structure ensures every client engagement receives the full attention of
-              experienced practitioners — not junior resource allocated against senior billing
-              rates. Focused teams, accountable delivery, consistent outcomes.
-            </p>
-          </div>
-
-        </div>
-      </section>
-
-
-      {/* ══════════════════════════════════════════
-          CASE STUDIES
-      ══════════════════════════════════════════ */}
-      <section id="work" className="py-28 px-8 bg-white border-t border-slate-200">
-        <div className="max-w-content mx-auto">
-
-          <div className="max-w-2xl mb-14">
-            <p className="corp-label mb-3">Delivery Examples</p>
-            <h2 className="text-[2.25rem] font-bold text-slate-900 mb-5 leading-tight">
-              Representative engagements
-            </h2>
-            <p className="text-[15px] text-slate-500 leading-relaxed">
-              A selection of representative projects illustrating our delivery capability
-              across different sectors and service areas. All client details have been
-              anonymised.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            {CASE_STUDIES.map(({ sector, title, metric, metricLabel, challenge, outcome, tags }) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {SERVICES.map(({ Icon, title, description }) => (
               <div
                 key={title}
-                className="border border-slate-200 rounded-xl overflow-hidden flex flex-col"
+                className="group bg-white rounded-2xl p-8 border border-slate-200 hover:border-teal-200 hover:shadow-[0_8px_32px_-8px_rgba(13,148,136,0.12)] hover:-translate-y-0.5 transition-all duration-300"
               >
-                {/* Sector label */}
-                <div className="px-6 py-3 border-b border-slate-100 bg-slate-50 flex-shrink-0">
-                  <span className="corp-label">{sector}</span>
+                <div className="w-11 h-11 rounded-xl bg-teal-50 flex items-center justify-center mb-5 group-hover:bg-teal-600 transition-colors duration-300">
+                  <Icon className="w-5 h-5 text-teal-600 group-hover:text-white transition-colors duration-300" />
                 </div>
-
-                {/* Outcome metric — hero number */}
-                <div className="px-6 pt-6 pb-5 border-b border-slate-100">
-                  <p className="text-[2.5rem] font-extrabold text-[#0066FF] leading-none tracking-tight mb-1.5">
-                    {metric}
-                  </p>
-                  <p className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">
-                    {metricLabel}
-                  </p>
-                </div>
-
-                {/* Body */}
-                <div className="p-6 flex flex-col flex-1">
-                  <h3 className="text-[15px] font-semibold text-slate-900 mb-5 leading-snug">
-                    {title}
-                  </h3>
-
-                  <div className="space-y-4 flex-1 mb-5">
-                    <div>
-                      <p className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider mb-1.5">
-                        Challenge
-                      </p>
-                      <p className="text-[13px] text-slate-600 leading-relaxed">{challenge}</p>
-                    </div>
-                    <div>
-                      <p className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider mb-1.5">
-                        Outcome
-                      </p>
-                      <p className="text-[13px] text-slate-600 leading-relaxed">{outcome}</p>
-                    </div>
-                  </div>
-
-                  <div className="flex flex-wrap gap-1.5 pt-4 border-t border-slate-100">
-                    {tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="text-[11px] font-medium text-[#0066FF] bg-blue-50 px-2.5 py-1 rounded"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-        </div>
-      </section>
-
-
-      {/* ══════════════════════════════════════════
-          INDUSTRIES
-      ══════════════════════════════════════════ */}
-      <section className="py-28 px-8 bg-slate-50 border-t border-slate-200">
-        <div className="max-w-content mx-auto">
-
-          <div className="max-w-2xl mb-14">
-            <p className="corp-label mb-3">Industry Focus</p>
-            <h2 className="text-[2.25rem] font-bold text-slate-900 mb-5 leading-tight">
-              Sectors we serve
-            </h2>
-            <p className="text-[15px] text-slate-500 leading-relaxed">
-              Deep domain knowledge across regulated, high-complexity industries where
-              the cost of poor technology delivery is significant.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-slate-200">
-            {INDUSTRIES.map(({ name, description }) => (
-              <div
-                key={name}
-                className="bg-slate-50 p-8 hover:bg-white transition-colors duration-150 group"
-              >
-                <div className="w-1 h-6 bg-[#0066FF]/25 group-hover:bg-[#0066FF] rounded-full mb-5 transition-colors duration-200" />
-                <h3 className="text-[15px] font-semibold text-slate-900 mb-3">{name}</h3>
+                <h3 className="text-[16px] font-bold text-slate-900 mb-3">{title}</h3>
                 <p className="text-[13px] text-slate-500 leading-relaxed">{description}</p>
               </div>
             ))}
@@ -791,102 +412,44 @@ export default function BlueloomVentures() {
 
 
       {/* ══════════════════════════════════════════
-          OUR APPROACH — vertical timeline
+          EXAMPLE PROJECTS
       ══════════════════════════════════════════ */}
-      <section id="approach" className="py-28 px-8 bg-white border-t border-slate-200">
-        <div className="max-w-content mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
-
-            {/* Left — copy */}
-            <div>
-              <p className="corp-label mb-3">Delivery Methodology</p>
-              <h2 className="text-[2.25rem] font-bold text-slate-900 mb-6 leading-tight">
-                How we engage
-                <br />and deliver
-              </h2>
-              <p className="text-[15px] text-slate-500 leading-relaxed mb-5">
-                Our methodology is built around transparency, accountability, and
-                predictability. We do not operate as a time-and-materials provider.
-                We scope engagements precisely, price responsibly, and deliver against
-                defined outcomes.
-              </p>
-              <p className="text-[15px] text-slate-500 leading-relaxed mb-10">
-                Every engagement is staffed by senior practitioners only. Clients work
-                directly with the engineers and consultants responsible for their delivery
-                — not through intermediary layers.
-              </p>
-              <a
-                href="#contact"
-                className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#0066FF] text-white font-semibold text-[13px] rounded hover:bg-[#0047CC] transition-colors duration-200"
-              >
-                Discuss an Engagement
-                <ArrowRight className="w-4 h-4" />
-              </a>
-            </div>
-
-            {/* Right — vertical timeline */}
-            <div className="relative">
-              {/* Connecting line */}
-              <div className="absolute left-[19px] top-12 bottom-10 w-px bg-gradient-to-b from-[#0066FF]/40 via-[#0066FF]/15 to-transparent" />
-
-              <div>
-                {APPROACH.map(({ step, title, body }, i) => (
-                  <div
-                    key={step}
-                    className={`relative flex gap-6 ${i < APPROACH.length - 1 ? 'pb-10' : ''}`}
-                  >
-                    {/* Step node */}
-                    <div className="relative z-10 flex-shrink-0 w-10 h-10 rounded-full border-2 border-[#0066FF]/30 bg-white flex items-center justify-center">
-                      <span className="text-[11px] font-mono font-bold text-[#0066FF] tabular-nums">
-                        {step}
-                      </span>
-                    </div>
-                    <div className="pt-1.5">
-                      <h4 className="text-[15px] font-semibold text-slate-900 mb-2">{title}</h4>
-                      <p className="text-[13px] text-slate-500 leading-relaxed">{body}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-
-      {/* ══════════════════════════════════════════
-          TESTIMONIALS
-      ══════════════════════════════════════════ */}
-      <section className="py-28 px-8 bg-slate-50 border-t border-slate-200">
+      <section id="projects" className="py-20 px-8 bg-slate-50 border-t border-slate-100">
         <div className="max-w-content mx-auto">
 
-          <div className="mb-14">
-            <p className="corp-label mb-3">Client Perspectives</p>
-            <h2 className="text-[2.25rem] font-bold text-slate-900 leading-tight">
-              What senior stakeholders say
+          <div className="max-w-xl mb-12">
+            <p className="corp-label mb-3">Example Projects</p>
+            <h2 className="text-[2.25rem] font-bold text-slate-900 leading-tight mb-4">
+              Real scenarios. Real results.
             </h2>
+            <p className="text-[15px] text-slate-500 leading-relaxed">
+              These are based on typical projects we work on. Details are kept anonymous, but the problems and outcomes are real.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            {TESTIMONIALS.map(({ quote, author, title, initials }) => (
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
+            {PROJECTS.map(({ sector, accentBg, accentBorder, accentBar, problem, solution, result }) => (
               <div
-                key={author}
-                className="bg-white border border-slate-200 rounded-xl p-8 flex flex-col"
+                key={sector}
+                className={`rounded-2xl border p-7 ${accentBg} ${accentBorder}`}
               >
-                {/* Large serif quote mark */}
-                <div className="text-[3.5rem] font-serif text-[#0066FF]/20 leading-none mb-4 select-none -mt-2">
-                  &ldquo;
+                <div className="flex items-center gap-2.5 mb-6">
+                  <div className={`w-2 h-2 rounded-full ${accentBar}`} />
+                  <span className="text-[12px] font-bold text-slate-700 uppercase tracking-wider">{sector}</span>
                 </div>
-                <p className="text-[15px] text-slate-700 leading-relaxed flex-1 mb-7">{quote}</p>
-                <div className="flex items-center gap-4 pt-5 border-t border-slate-100">
-                  {/* Blue gradient avatar */}
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#0066FF] to-[#0047CC] flex items-center justify-center text-white text-[12px] font-bold flex-shrink-0">
-                    {initials}
+
+                <div className="space-y-4">
+                  <div>
+                    <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1.5">Problem</p>
+                    <p className="text-[13px] text-slate-700 leading-relaxed">{problem}</p>
                   </div>
                   <div>
-                    <p className="text-[13px] font-semibold text-slate-900">{author}</p>
-                    <p className="text-[11px] text-slate-400 mt-0.5">{title}</p>
+                    <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1.5">What We Did</p>
+                    <p className="text-[13px] text-slate-700 leading-relaxed">{solution}</p>
+                  </div>
+                  <div className="pt-4 border-t border-white/60">
+                    <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1.5">Result</p>
+                    <p className="text-[14px] font-semibold text-slate-900 leading-snug">{result}</p>
                   </div>
                 </div>
               </div>
@@ -898,42 +461,34 @@ export default function BlueloomVentures() {
 
 
       {/* ══════════════════════════════════════════
-          CTA BANNER — electric blue
+          FINAL CTA
       ══════════════════════════════════════════ */}
-      <section className="relative py-20 px-8 bg-[#0066FF] overflow-hidden">
-        {/* Dot-grid texture overlay */}
+      <section className="relative py-20 px-8 bg-gradient-to-br from-teal-700 to-teal-500 overflow-hidden">
         <div
-          className="absolute inset-0 pointer-events-none opacity-[0.07]"
+          className="absolute inset-0 pointer-events-none opacity-[0.06]"
           style={{
             backgroundImage: 'radial-gradient(circle, rgba(255,255,255,1) 1px, transparent 1px)',
             backgroundSize: '28px 28px',
           }}
         />
-        <div className="relative z-10 max-w-content mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-          <div>
-            <h2 className="text-[2rem] font-bold text-white leading-tight mb-4">
-              Ready to discuss your requirements?
-            </h2>
-            <p className="text-[15px] text-white/75 leading-relaxed">
-              We offer a complimentary 60-minute discovery session for qualified
-              organisations. Submit an enquiry and we will respond within one business day.
-            </p>
-          </div>
-          <div className="flex flex-col sm:flex-row gap-3 lg:justify-end">
-            <a
-              href="#contact"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-white text-[#0066FF] font-semibold text-[13px] rounded hover:bg-blue-50 transition-colors duration-200"
-            >
-              Book a Discovery Call
-              <ArrowRight className="w-4 h-4" />
-            </a>
-            <a
-              href="mailto:blueloomventuresllc@gmail.com"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 border border-white/30 text-white font-semibold text-[13px] rounded hover:border-white/55 transition-colors duration-200"
-            >
-              Send an Enquiry
-            </a>
-          </div>
+        <div className="relative z-10 max-w-2xl mx-auto text-center">
+          <h2 className="text-[2.25rem] font-bold text-white leading-tight mb-4">
+            Your tech problems aren&apos;t going to fix themselves.
+          </h2>
+          <p className="text-[16px] text-white/75 leading-relaxed mb-8">
+            Book a free 15-minute call. We&apos;ll take a look at your current setup, tell you honestly
+            what needs attention, and give you a clear sense of what it would take to fix.
+          </p>
+          <a
+            href="#contact"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-white text-teal-700 font-semibold text-[14px] rounded-xl hover:bg-teal-50 transition-colors shadow-lg"
+          >
+            Book a Free IT Assessment
+            <ArrowRight className="w-4 h-4" />
+          </a>
+          <p className="text-[12px] text-white/50 mt-5">
+            No commitment. No sales pitch. We just want to understand your situation.
+          </p>
         </div>
       </section>
 
@@ -941,157 +496,123 @@ export default function BlueloomVentures() {
       {/* ══════════════════════════════════════════
           CONTACT
       ══════════════════════════════════════════ */}
-      <section id="contact" className="py-28 px-8 bg-white border-t border-slate-200">
-        <div className="max-w-content mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20">
+      <section id="contact" className="py-20 px-8 bg-white border-t border-slate-100">
+        <div className="max-w-content mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
 
-          {/* Left — contact details */}
           <div>
             <p className="corp-label mb-3">Get in Touch</p>
-            <h2 className="text-[2.25rem] font-bold text-slate-900 mb-5 leading-tight">
-              Start a conversation
+            <h2 className="text-[2.25rem] font-bold text-slate-900 mb-4 leading-tight">
+              Tell us what&apos;s going on.
             </h2>
             <p className="text-[15px] text-slate-500 leading-relaxed mb-10">
-              Whether you have a defined requirement or an exploratory question about how
-              technology might address a business challenge, we are available to discuss it.
-              All initial consultations are conducted in confidence and carry no obligation.
+              Fill in the form and we&apos;ll get back to you within one business day.
+              No auto-replies. No sales sequences. Just a real response.
             </p>
 
             <div className="space-y-6">
-              {[
-                {
-                  label: 'Email',
-                  value: 'blueloomventuresllc@gmail.com',
-                  href: 'mailto:blueloomventuresllc@gmail.com',
-                },
-                {
-                  label: 'Response Time',
-                  value: 'All enquiries acknowledged within one business day',
-                  href: null,
-                },
-                {
-                  label: 'LinkedIn',
-                  value: 'BlueLoom Ventures',
-                  href: 'https://linkedin.com/company/blueloom-ventures',
-                },
-              ].map(({ label, value, href }) => (
-                <div key={label} className="flex items-start gap-4">
-                  <div className="w-7 h-7 border border-slate-200 rounded flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#0066FF]" />
-                  </div>
-                  <div>
-                    <p className="text-[11px] font-semibold text-slate-400 uppercase tracking-wide mb-1">
-                      {label}
-                    </p>
-                    {href ? (
-                      <a
-                        href={href}
-                        target={href.startsWith('http') ? '_blank' : undefined}
-                        rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                        className="text-[13px] text-slate-700 hover:text-[#0066FF] transition-colors"
-                      >
-                        {value}
-                      </a>
-                    ) : (
-                      <p className="text-[13px] text-slate-500">{value}</p>
-                    )}
-                  </div>
+              <div className="flex items-start gap-4">
+                <div className="w-9 h-9 bg-teal-50 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span className="w-2 h-2 rounded-full bg-teal-500" />
                 </div>
-              ))}
+                <div>
+                  <p className="text-[11px] font-semibold text-slate-400 uppercase tracking-wide mb-0.5">Email</p>
+                  <a
+                    href="mailto:blueloomventuresllc@gmail.com"
+                    className="text-[13px] text-slate-700 hover:text-teal-600 transition-colors"
+                  >
+                    blueloomventuresllc@gmail.com
+                  </a>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="w-9 h-9 bg-teal-50 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span className="w-2 h-2 rounded-full bg-teal-500" />
+                </div>
+                <div>
+                  <p className="text-[11px] font-semibold text-slate-400 uppercase tracking-wide mb-0.5">Response Time</p>
+                  <p className="text-[13px] text-slate-500">Within one business day</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="w-9 h-9 bg-teal-50 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span className="w-2 h-2 rounded-full bg-teal-500" />
+                </div>
+                <div>
+                  <p className="text-[11px] font-semibold text-slate-400 uppercase tracking-wide mb-0.5">LinkedIn</p>
+                  <a
+                    href="https://linkedin.com/company/blueloom-ventures"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[13px] text-slate-700 hover:text-teal-600 transition-colors"
+                  >
+                    BlueLoom Ventures
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* Right — enterprise enquiry form */}
           <div>
             <form
               action="https://formspree.io/f/mkozrpkz"
               method="POST"
-              className="space-y-5"
+              className="space-y-4"
             >
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-[10px] font-semibold text-slate-500 uppercase tracking-[0.08em] mb-2">
-                    Full Name
+                  <label className="block text-[11px] font-semibold text-slate-500 uppercase tracking-wide mb-1.5">
+                    Your Name
                   </label>
                   <input
                     type="text" name="name" required
-                    placeholder="Alexandra Johnson"
-                    className="w-full px-4 py-3 border border-slate-300 rounded text-slate-900 text-[13px] placeholder:text-slate-300 focus:outline-none focus:border-[#0066FF] bg-white transition-colors"
+                    placeholder="Jane Smith"
+                    className="w-full px-4 py-3 border border-slate-200 rounded-xl text-slate-900 text-[13px] placeholder:text-slate-300 focus:outline-none focus:border-teal-500 transition-colors"
                   />
                 </div>
                 <div>
-                  <label className="block text-[10px] font-semibold text-slate-500 uppercase tracking-[0.08em] mb-2">
-                    Email Address
+                  <label className="block text-[11px] font-semibold text-slate-500 uppercase tracking-wide mb-1.5">
+                    Email
                   </label>
                   <input
                     type="email" name="email" required
-                    placeholder="a.johnson@company.com"
-                    className="w-full px-4 py-3 border border-slate-300 rounded text-slate-900 text-[13px] placeholder:text-slate-300 focus:outline-none focus:border-[#0066FF] bg-white transition-colors"
-                  />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                <div>
-                  <label className="block text-[10px] font-semibold text-slate-500 uppercase tracking-[0.08em] mb-2">
-                    Organisation
-                  </label>
-                  <input
-                    type="text" name="company"
-                    placeholder="Company name"
-                    className="w-full px-4 py-3 border border-slate-300 rounded text-slate-900 text-[13px] placeholder:text-slate-300 focus:outline-none focus:border-[#0066FF] bg-white transition-colors"
-                  />
-                </div>
-                <div>
-                  <label className="block text-[10px] font-semibold text-slate-500 uppercase tracking-[0.08em] mb-2">
-                    Job Title
-                  </label>
-                  <input
-                    type="text" name="jobtitle"
-                    placeholder="Chief Technology Officer"
-                    className="w-full px-4 py-3 border border-slate-300 rounded text-slate-900 text-[13px] placeholder:text-slate-300 focus:outline-none focus:border-[#0066FF] bg-white transition-colors"
+                    placeholder="jane@company.com"
+                    className="w-full px-4 py-3 border border-slate-200 rounded-xl text-slate-900 text-[13px] placeholder:text-slate-300 focus:outline-none focus:border-teal-500 transition-colors"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-[10px] font-semibold text-slate-500 uppercase tracking-[0.08em] mb-2">
-                  Service Area
+                <label className="block text-[11px] font-semibold text-slate-500 uppercase tracking-wide mb-1.5">
+                  Company
                 </label>
-                <div className="relative">
-                  <select
-                    name="service"
-                    className="w-full px-4 py-3 border border-slate-300 rounded text-slate-700 text-[13px] bg-white focus:outline-none focus:border-[#0066FF] appearance-none pr-10 transition-colors"
-                  >
-                    <option value="">Select a service area…</option>
-                    {SERVICE_OPTIONS.map((s) => (
-                      <option key={s}>{s}</option>
-                    ))}
-                  </select>
-                  <ChevronRight className="absolute right-3.5 top-1/2 -translate-y-1/2 rotate-90 w-4 h-4 text-slate-400 pointer-events-none" />
-                </div>
+                <input
+                  type="text" name="company"
+                  placeholder="Your company"
+                  className="w-full px-4 py-3 border border-slate-200 rounded-xl text-slate-900 text-[13px] placeholder:text-slate-300 focus:outline-none focus:border-teal-500 transition-colors"
+                />
               </div>
 
               <div>
-                <label className="block text-[10px] font-semibold text-slate-500 uppercase tracking-[0.08em] mb-2">
-                  Enquiry Details
+                <label className="block text-[11px] font-semibold text-slate-500 uppercase tracking-wide mb-1.5">
+                  What do you need help with?
                 </label>
                 <textarea
                   name="message" required rows={5}
-                  placeholder="Please describe your requirements, project context, and any relevant timelines or constraints."
-                  className="w-full px-4 py-3 border border-slate-300 rounded text-slate-900 text-[13px] placeholder:text-slate-300 focus:outline-none focus:border-[#0066FF] bg-white resize-none transition-colors"
+                  placeholder="Describe what's not working or what's slowing your team down. Plain terms are fine."
+                  className="w-full px-4 py-3 border border-slate-200 rounded-xl text-slate-900 text-[13px] placeholder:text-slate-300 focus:outline-none focus:border-teal-500 resize-none transition-colors"
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full py-3.5 bg-[#0066FF] text-white text-[13px] font-semibold rounded hover:bg-[#0047CC] transition-colors duration-200 flex items-center justify-center gap-2"
+                className="w-full py-3.5 bg-teal-600 text-white text-[13px] font-semibold rounded-xl hover:bg-teal-700 transition-colors flex items-center justify-center gap-2"
               >
-                Submit Enquiry
+                Send Message
                 <ArrowRight className="w-4 h-4" />
               </button>
 
               <p className="text-[11px] text-slate-400 text-center">
-                All enquiries are treated as confidential. We respond within one business day.
+                We read every message and respond personally within one business day.
               </p>
             </form>
           </div>
@@ -1103,13 +624,12 @@ export default function BlueloomVentures() {
       {/* ══════════════════════════════════════════
           FOOTER
       ══════════════════════════════════════════ */}
-      <footer className="bg-[#030D1F]">
-        <div className="max-w-content mx-auto px-8 pt-16 pb-10">
+      <footer className="bg-slate-900">
+        <div className="max-w-content mx-auto px-8 pt-14 pb-10">
 
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-10 mb-14">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-10 mb-12">
 
-            {/* Brand block */}
-            <div className="md:col-span-4">
+            <div className="md:col-span-5">
               <div className="flex items-center gap-3 mb-5">
                 <Image
                   src="/blueloom-logo.png"
@@ -1119,80 +639,40 @@ export default function BlueloomVentures() {
                   className="object-contain"
                 />
                 <div className="leading-tight">
-                  <div className="font-bold text-[13px] text-white tracking-tight">
-                    BlueLoom Ventures
-                  </div>
-                  <div className="text-[9px] font-semibold text-white/25 tracking-[0.12em] uppercase mt-0.5">
-                    Technology Consulting
-                  </div>
+                  <div className="font-bold text-[13px] text-white">BlueLoom Ventures</div>
+                  <div className="text-[9px] font-semibold text-white/25 uppercase tracking-widest mt-0.5">IT Consulting</div>
                 </div>
               </div>
-              <p className="text-[13px] text-white/35 leading-relaxed max-w-xs mb-5">
-                Enterprise software development and IT consulting for organisations that
-                require precision, reliability, and measurable results.
+              <p className="text-[13px] text-white/40 leading-relaxed max-w-xs mb-5">
+                Project-based IT consulting for small businesses. We fix your tech, train your team, and leave you in a better position than we found you.
               </p>
               <a
                 href="mailto:blueloomventuresllc@gmail.com"
-                className="text-[13px] text-white/35 hover:text-white/70 transition-colors"
+                className="text-[13px] text-white/40 hover:text-white/70 transition-colors"
               >
                 blueloomventuresllc@gmail.com
               </a>
             </div>
 
-            {/* Services */}
-            <div className="md:col-span-2 md:col-start-6">
-              <h4 className="text-[10px] font-semibold text-white/25 uppercase tracking-widest mb-4">
-                Services
-              </h4>
+            <div className="md:col-span-3 md:col-start-7">
+              <h4 className="text-[10px] font-semibold text-white/25 uppercase tracking-widest mb-4">Services</h4>
               <ul className="space-y-2.5">
-                {FOOTER_SERVICES.map((s) => (
+                {['IT System Cleanup', 'Security & Backup', 'Process Automation', 'Microsoft 365 & Google Workspace'].map((s) => (
                   <li key={s}>
-                    <a
-                      href="#services"
-                      className="text-[13px] text-white/35 hover:text-white/70 transition-colors"
-                    >
-                      {s}
-                    </a>
+                    <a href="#services" className="text-[13px] text-white/40 hover:text-white/70 transition-colors">{s}</a>
                   </li>
                 ))}
               </ul>
             </div>
 
-            {/* Company */}
             <div className="md:col-span-2">
-              <h4 className="text-[10px] font-semibold text-white/25 uppercase tracking-widest mb-4">
-                Company
-              </h4>
-              <ul className="space-y-2.5">
-                {[
-                  ['Our Work', '#work'],
-                  ['Approach', '#approach'],
-                  ['Contact',  '#contact'],
-                ].map(([label, href]) => (
-                  <li key={label}>
-                    <a
-                      href={href}
-                      className="text-[13px] text-white/35 hover:text-white/70 transition-colors"
-                    >
-                      {label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Connect */}
-            <div className="md:col-span-2">
-              <h4 className="text-[10px] font-semibold text-white/25 uppercase tracking-widest mb-4">
-                Connect
-              </h4>
+              <h4 className="text-[10px] font-semibold text-white/25 uppercase tracking-widest mb-4">Connect</h4>
               <ul className="space-y-2.5">
                 <li>
                   <a
                     href="https://linkedin.com/company/blueloom-ventures"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[13px] text-white/35 hover:text-white/70 transition-colors"
+                    target="_blank" rel="noopener noreferrer"
+                    className="text-[13px] text-white/40 hover:text-white/70 transition-colors"
                   >
                     LinkedIn
                   </a>
@@ -1200,11 +680,18 @@ export default function BlueloomVentures() {
                 <li>
                   <a
                     href="https://x.com/BlueLoomVenture"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[13px] text-white/35 hover:text-white/70 transition-colors"
+                    target="_blank" rel="noopener noreferrer"
+                    className="text-[13px] text-white/40 hover:text-white/70 transition-colors"
                   >
                     Twitter / X
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#contact"
+                    className="text-[13px] text-white/40 hover:text-white/70 transition-colors"
+                  >
+                    Contact Us
                   </a>
                 </li>
               </ul>
@@ -1212,7 +699,6 @@ export default function BlueloomVentures() {
 
           </div>
 
-          {/* Legal bar */}
           <div className="pt-8 border-t border-white/[0.06] flex flex-col sm:flex-row justify-between items-center gap-3 text-[11px] text-white/20">
             <span>© 2026 BlueLoom Ventures LLC. All rights reserved.</span>
             <div className="flex gap-5">
