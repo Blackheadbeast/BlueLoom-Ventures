@@ -11,6 +11,10 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "BlueLoom Ventures — IT Consulting for Small Business",
+  icons: {
+    icon: '/blueloom-logo.png',
+    apple: '/blueloom-logo.png',
+  },
   description:
     "We help small businesses fix messy systems, improve security, and automate repetitive work. Project-based IT consulting with no contracts and no big invoices.",
   keywords: [

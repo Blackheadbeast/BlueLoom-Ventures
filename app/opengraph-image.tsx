@@ -1,11 +1,17 @@
 import { ImageResponse } from 'next/og';
+import { readFile } from 'fs/promises';
+import path from 'path';
 
-export const runtime = 'edge';
 export const alt = 'BlueLoom Ventures — IT Consulting for Small Business';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
 export default async function Image() {
+  const logoBuffer = await readFile(
+    path.join(process.cwd(), 'public', 'blueloom-logo.png')
+  );
+  const logoSrc = `data:image/png;base64,${logoBuffer.toString('base64')}`;
+
   return new ImageResponse(
     (
       <div
@@ -21,28 +27,16 @@ export default async function Image() {
           fontFamily: 'Inter, system-ui, sans-serif',
         }}
       >
-        {/* Top — logo area */}
+        {/* Top — logo + wordmark */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-          <div
-            style={{
-              width: '52px',
-              height: '52px',
-              background: 'rgba(255,255,255,0.25)',
-              borderRadius: '14px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
-          >
-            <div
-              style={{
-                width: '28px',
-                height: '28px',
-                background: 'white',
-                borderRadius: '6px',
-              }}
-            />
-          </div>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={logoSrc}
+            width={52}
+            height={52}
+            style={{ borderRadius: '10px', objectFit: 'contain' }}
+            alt=""
+          />
           <div style={{ display: 'flex', flexDirection: 'column' }}>
             <span
               style={{
@@ -69,7 +63,7 @@ export default async function Image() {
           </div>
         </div>
 
-        {/* Middle — headline */}
+        {/* Middle — headline + tagline */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
           <h1
             style={{
@@ -102,13 +96,7 @@ export default async function Image() {
         </div>
 
         {/* Bottom — CTA pill */}
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '12px',
-          }}
-        >
+        <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
           <div
             style={{
               background: 'white',
@@ -121,14 +109,9 @@ export default async function Image() {
           >
             Book a Free IT Assessment
           </div>
-          <div
-            style={{
-              color: 'rgba(255,255,255,0.5)',
-              fontSize: '16px',
-            }}
-          >
+          <span style={{ color: 'rgba(255,255,255,0.5)', fontSize: '16px' }}>
             No contracts. No obligation.
-          </div>
+          </span>
         </div>
       </div>
     ),
