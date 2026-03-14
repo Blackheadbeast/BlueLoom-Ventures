@@ -540,12 +540,12 @@ export default function BlueloomVentures() {
                 <div>
                   <p className="text-[11px] font-semibold text-slate-400 uppercase tracking-wide mb-0.5">LinkedIn</p>
                   <a
-                    href="https://linkedin.com/company/blueloom-ventures"
+                    href="https://www.linkedin.com/in/mahadghazipura"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-[13px] text-slate-700 hover:text-teal-600 transition-colors"
                   >
-                    BlueLoom Ventures
+                    Mahad Ghazipura
                   </a>
                 </div>
               </div>
@@ -643,8 +643,20 @@ export default function BlueloomVentures() {
                   <div className="text-[9px] font-semibold text-white/25 uppercase tracking-widest mt-0.5">IT Consulting</div>
                 </div>
               </div>
-              <p className="text-[13px] text-white/40 leading-relaxed max-w-xs mb-5">
+              <p className="text-[13px] text-white/40 leading-relaxed max-w-xs mb-3">
                 Project-based IT consulting for small businesses. We fix your tech, train your team, and leave you in a better position than we found you.
+              </p>
+              <p className="text-[13px] text-white/55 leading-relaxed max-w-xs mb-5">
+                Led by{' '}
+                <a
+                  href="https://www.linkedin.com/in/mahadghazipura"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/70 hover:text-white underline underline-offset-2 decoration-white/30 transition-colors"
+                >
+                  Mahad Ghazipura
+                </a>
+                , helping small businesses simplify their technology and automate their operations.
               </p>
               <a
                 href="mailto:blueloomventuresllc@gmail.com"
@@ -670,11 +682,11 @@ export default function BlueloomVentures() {
               <ul className="space-y-2.5">
                 <li>
                   <a
-                    href="https://linkedin.com/company/blueloom-ventures"
+                    href="https://www.linkedin.com/in/mahadghazipura"
                     target="_blank" rel="noopener noreferrer"
                     className="text-[13px] text-white/40 hover:text-white/70 transition-colors"
                   >
-                    LinkedIn
+                    Mahad Ghazipura
                   </a>
                 </li>
                 <li>
