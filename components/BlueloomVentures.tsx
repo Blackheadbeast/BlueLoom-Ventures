@@ -277,7 +277,15 @@ export default function BlueloomVentures() {
             style={{ animation: 'fadeUp 0.7s cubic-bezier(0.16,1,0.3,1) 0.35s both' }}
           >
             <div className="absolute right-8 top-1/2 -translate-y-1/2 w-64 h-64 rounded-full bg-teal-50 -z-10" />
-            <div className="absolute left-0 bottom-8 w-36 h-36 rounded-full bg-slate-100 -z-10" />
+            <div className="absolute left-0 bottom-8 w-36 h-36 rounded-full bg-teal-50 -z-10 flex items-center justify-center overflow-hidden">
+              <Image
+                src="/blueloom-logo.png"
+                alt=""
+                width={64}
+                height={64}
+                className="object-contain opacity-40"
+              />
+            </div>
 
             {/* Main card */}
             <div className="absolute right-0 top-8 w-[290px] bg-white rounded-2xl shadow-[0_8px_40px_-8px_rgba(0,0,0,0.14)] border border-slate-100 p-5">
@@ -624,7 +632,7 @@ export default function BlueloomVentures() {
       {/* ══════════════════════════════════════════
           FOOTER
       ══════════════════════════════════════════ */}
-      <footer className="bg-slate-900">
+      <footer className="bg-slate-50 border-t border-slate-200">
         <div className="max-w-content mx-auto px-8 pt-14 pb-10">
 
           <div className="grid grid-cols-1 md:grid-cols-12 gap-10 mb-12">
@@ -639,20 +647,20 @@ export default function BlueloomVentures() {
                   className="object-contain"
                 />
                 <div className="leading-tight">
-                  <div className="font-bold text-[13px] text-white">BlueLoom Ventures</div>
-                  <div className="text-[9px] font-semibold text-white/25 uppercase tracking-widest mt-0.5">IT Consulting</div>
+                  <div className="font-bold text-[13px] text-slate-900">BlueLoom Ventures</div>
+                  <div className="text-[9px] font-semibold text-slate-400 uppercase tracking-widest mt-0.5">IT Consulting</div>
                 </div>
               </div>
-              <p className="text-[13px] text-white/40 leading-relaxed max-w-xs mb-3">
+              <p className="text-[13px] text-slate-500 leading-relaxed max-w-xs mb-3">
                 Project-based IT consulting for small businesses. We fix your tech, train your team, and leave you in a better position than we found you.
               </p>
-              <p className="text-[13px] text-white/55 leading-relaxed max-w-xs mb-5">
+              <p className="text-[13px] text-slate-500 leading-relaxed max-w-xs mb-5">
                 Led by{' '}
                 <a
                   href="https://www.linkedin.com/in/mahadghazipura"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white/70 hover:text-white underline underline-offset-2 decoration-white/30 transition-colors"
+                  className="text-teal-600 hover:text-teal-700 underline underline-offset-2 decoration-teal-300 transition-colors"
                 >
                   Mahad Ghazipura
                 </a>
@@ -660,31 +668,31 @@ export default function BlueloomVentures() {
               </p>
               <a
                 href="mailto:blueloomventuresllc@gmail.com"
-                className="text-[13px] text-white/40 hover:text-white/70 transition-colors"
+                className="text-[13px] text-slate-500 hover:text-teal-600 transition-colors"
               >
                 blueloomventuresllc@gmail.com
               </a>
             </div>
 
             <div className="md:col-span-3 md:col-start-7">
-              <h4 className="text-[10px] font-semibold text-white/25 uppercase tracking-widest mb-4">Services</h4>
+              <h4 className="text-[10px] font-semibold text-slate-400 uppercase tracking-widest mb-4">Services</h4>
               <ul className="space-y-2.5">
                 {['IT System Cleanup', 'Security & Backup', 'Process Automation', 'Microsoft 365 & Google Workspace'].map((s) => (
                   <li key={s}>
-                    <a href="#services" className="text-[13px] text-white/40 hover:text-white/70 transition-colors">{s}</a>
+                    <a href="#services" className="text-[13px] text-slate-500 hover:text-teal-600 transition-colors">{s}</a>
                   </li>
                 ))}
               </ul>
             </div>
 
             <div className="md:col-span-2">
-              <h4 className="text-[10px] font-semibold text-white/25 uppercase tracking-widest mb-4">Connect</h4>
+              <h4 className="text-[10px] font-semibold text-slate-400 uppercase tracking-widest mb-4">Connect</h4>
               <ul className="space-y-2.5">
                 <li>
                   <a
                     href="https://www.linkedin.com/in/mahadghazipura"
                     target="_blank" rel="noopener noreferrer"
-                    className="text-[13px] text-white/40 hover:text-white/70 transition-colors"
+                    className="text-[13px] text-slate-500 hover:text-teal-600 transition-colors"
                   >
                     Mahad Ghazipura
                   </a>
@@ -693,7 +701,7 @@ export default function BlueloomVentures() {
                   <a
                     href="https://x.com/BlueLoomVenture"
                     target="_blank" rel="noopener noreferrer"
-                    className="text-[13px] text-white/40 hover:text-white/70 transition-colors"
+                    className="text-[13px] text-slate-500 hover:text-teal-600 transition-colors"
                   >
                     Twitter / X
                   </a>
@@ -701,7 +709,7 @@ export default function BlueloomVentures() {
                 <li>
                   <a
                     href="#contact"
-                    className="text-[13px] text-white/40 hover:text-white/70 transition-colors"
+                    className="text-[13px] text-slate-500 hover:text-teal-600 transition-colors"
                   >
                     Contact Us
                   </a>
@@ -711,11 +719,11 @@ export default function BlueloomVentures() {
 
           </div>
 
-          <div className="pt-8 border-t border-white/[0.06] flex flex-col sm:flex-row justify-between items-center gap-3 text-[11px] text-white/20">
+          <div className="pt-8 border-t border-slate-200 flex flex-col sm:flex-row justify-between items-center gap-3 text-[11px] text-slate-400">
             <span>© 2026 BlueLoom Ventures LLC. All rights reserved.</span>
             <div className="flex gap-5">
-              <a href="#" className="hover:text-white/40 transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-white/40 transition-colors">Terms of Service</a>
+              <a href="#" className="hover:text-slate-600 transition-colors">Privacy Policy</a>
+              <a href="#" className="hover:text-slate-600 transition-colors">Terms of Service</a>
             </div>
           </div>
 
