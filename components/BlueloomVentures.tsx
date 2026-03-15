@@ -163,10 +163,10 @@ export default function BlueloomVentures() {
 
           <div className="hidden lg:flex items-center gap-4">
             <a
-              href="mailto:blueloomventuresllc@gmail.com"
+              href="mailto:mahad@blueloomventures.com"
               className="text-[13px] text-slate-500 hover:text-slate-800 transition-colors"
             >
-              blueloomventuresllc@gmail.com
+              mahad@blueloomventures.com
             </a>
             <a
               href="#contact"
@@ -525,10 +525,10 @@ export default function BlueloomVentures() {
                 <div>
                   <p className="text-[11px] font-semibold text-slate-400 uppercase tracking-wide mb-0.5">Email</p>
                   <a
-                    href="mailto:blueloomventuresllc@gmail.com"
+                    href="mailto:mahad@blueloomventures.com"
                     className="text-[13px] text-slate-700 hover:text-teal-600 transition-colors"
                   >
-                    blueloomventuresllc@gmail.com
+                    mahad@blueloomventures.com
                   </a>
                 </div>
               </div>
@@ -667,10 +667,10 @@ export default function BlueloomVentures() {
                 , helping small businesses simplify their technology and automate their operations.
               </p>
               <a
-                href="mailto:blueloomventuresllc@gmail.com"
+                href="mailto:mahad@blueloomventures.com"
                 className="text-[13px] text-slate-500 hover:text-teal-600 transition-colors"
               >
-                blueloomventuresllc@gmail.com
+                mahad@blueloomventures.com
               </a>
             </div>
 
